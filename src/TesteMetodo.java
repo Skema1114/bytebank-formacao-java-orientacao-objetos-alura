@@ -1,4 +1,4 @@
-public class TestaMetodo {
+public class TesteMetodo {
     public static void main(String[] args) {
         Conta contaDoPaulo = new Conta();
         contaDoPaulo.saldo = 100;

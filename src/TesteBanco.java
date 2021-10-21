@@ -1,4 +1,4 @@
-public class TestaBanco {
+public class TesteBanco {
     public static void main(String[] args) {
         Cliente rafael = new Cliente();
         rafael.nome = "Rafael Martins";
