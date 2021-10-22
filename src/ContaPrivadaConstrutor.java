@@ -1,8 +1,19 @@
-public class ContaPrivada {
-    private double saldo = 100;
+public class ContaPrivadaConstrutor {
+    private double saldo;
     private int agencia;
     private int numero;
-    private ClientePrivado titular = new ClientePrivado();
+    private ClientePrivado titular;
+    // O static aqui está dizendo que o total é da classe e nao das instancias;
+    private static int total;
+
+    public ContaPrivadaConstrutor(int agencia, int numero) {
+        total++;
+        // System.out.println("Total de contas criadas " + total);
+
+        this.agencia = agencia;
+        this.numero = numero;
+        // System.out.println("Estou criando uma conta " + this.numero);
+    }
 
     public void depositar(double valor) {
         this.saldo += valor;
@@ -18,7 +29,7 @@ public class ContaPrivada {
         }
     }
 
-    public boolean transferir(double valor, ContaPrivada destino) {
+    public boolean transferir(double valor, ContaPrivadaConstrutor destino) {
         if (this.saldo >= valor && destino != this) {
             this.sacar(valor);
             destino.depositar(valor);
@@ -31,6 +42,10 @@ public class ContaPrivada {
 
     public double getSaldo() {
         return this.saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public int getAgencia() {
@@ -65,5 +80,13 @@ public class ContaPrivada {
 
     public void setTitular(ClientePrivado titular) {
         this.titular = titular;
+    }
+
+    public static int getTotal() {
+        return total;
+    }
+
+    public static void setTotal(int total) {
+        ContaPrivadaConstrutor.total = total;
     }
 }
