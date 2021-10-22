@@ -1,4 +1,4 @@
-# BytebankJavaOrientacaoObjetosAlura
+# BytebankFormacaoJavaOrientacaoObjetosAlura
 
 ## Neste projeto:
 
